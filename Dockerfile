@@ -8,5 +8,5 @@ RUN pip install gunicorn
 
 RUN chmod +x boot.sh
 
-EXPOSE 5000
+#EXPOSE 5000
 ENTRYPOINT ["sh", "boot.sh"]
