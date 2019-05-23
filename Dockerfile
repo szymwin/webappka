@@ -9,5 +9,5 @@ RUN pip install gunicorn
 RUN chmod +x boot.sh
 
 #EXPOSE 5000
-#ENTRYPOINT ["sh", "boot.sh"]
-#CMD gunicorn --bind 0.0.0.0:$PORT manage:app
+ENTRYPOINT ["sh", "boot.sh"]
+CMD gunicorn --bind 0.0.0.0:$PORT manage:app
