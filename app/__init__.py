@@ -12,7 +12,10 @@ def create_app(config_name):
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'False'
     db.init_app(app)
     # db = SQLAlchemy(app)
-    # db.create_all()
+
+    # with app.test_request_context():
+    #     db.create_all()
+    #     db.session.commit()
 
     # Create app blueprints
     from .main import main as main_blueprint
