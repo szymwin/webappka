@@ -25,5 +25,5 @@ def create_app(config_name):
 if __name__ == "__main__":
     app = create_app('default')
     app.debug = True
-    app.run()
+    app.run(host='0.0.0.0')
 
