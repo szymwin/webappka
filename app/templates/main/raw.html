@@ -11,14 +11,22 @@
     <thead>
     <tr>
         <th>#</th>
-        <th>Created at</th>
-        <th>First Name</th>
-        <th>Email</th>
-        <th>Age</th>
-        <th>Income</th>
-        <th>Satisfaction</th>
-        <th>Python</th>
-        <th>Flask</th>
+        <th>Utworzono:</th>
+        <th>age</th>
+        <th>home</th>
+        <th>gender</th>
+        <th>sex</th>
+        <th>education</th>
+        <th>faith</th>
+        <th>friends</th>
+        <th>family</th>
+        <th>view</th>
+        <th>openminded</th>
+        <th>support</th>
+        <th>manifest</th>
+        <th>partnership</th>
+        <th>kids</th>
+        <th>status</th>
     </tr>
     </thead>
 
@@ -27,13 +35,21 @@
     <tr>
         <td>{{ element.id }}</td>
         <td>{{ element.created_at }}</td>
-        <td>{{ element.firstname }}</td>
-        <td>{{ element.email }}</td>
         <td>{{ element.age }}</td>
-        <td>{{ element.income }}</td>
-        <td>{{ element.satisfaction }}</td>
-        <td>{{ element.q1 }}</td>
-        <td>{{ element.q2 }}</td>
+        <td>{{ element.home }}</td>
+        <td>{{ element.gender }}</td>
+        <td>{{ element.sex }}</td>
+        <td>{{ element.education }}</td>
+        <td>{{ element.faith }}</td>
+        <td>{{ element.friends }}</td>
+        <td>{{ element.family }}</td>
+        <td>{{ element.view }}</td>
+        <td>{{ element.openminded }}</td>
+        <td>{{ element.support }}</td>
+        <td>{{ element.manifest }}</td>
+        <td>{{ element.partnership }}</td>
+        <td>{{ element.kids }}</td>
+        <td>{{ element.status }}</td>
 
     </tr>
     {% endfor %}

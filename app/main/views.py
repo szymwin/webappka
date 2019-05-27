@@ -10,7 +10,7 @@ main = Blueprint('main', __name__)
 def welcome():
     return render_template('main/welcome.html')
 
-#TODO: utworzenie dodatkowych modulow / pakietow
+# TODO: utworzenie dodatkowych modulow / pakietow
 @main.route("/form")
 def show_form():
     return render_template('main/form.html')
@@ -59,16 +59,25 @@ def show_result():
 @main.route("/save", methods=['POST'])
 def save():
     # Get data from FORM
-    firstname = request.form['firstname']
-    email = request.form['email']
     age = request.form['age']
-    income = request.form['income']
-    satisfaction = request.form['satisfaction']
-    q1 = request.form['q1']
-    q2 = request.form['q2']
+    home = request.form['home']
+    gender = request.form['gender']
+    sex = request.form['sex']
+    education = request.form['education']
+    faith = request.form['faith']
+    friends = request.form['friends']
+    family = request.form['family']
+    view = request.form['view']
+    openminded = request.form['openminded']
+    support = request.form['support']
+    manifest = request.form['manifest']
+    partnership = request.form['partnership']
+    kids = request.form['kids']
+    status = request.form['status']
 
     # Save the data
-    fd = Formdata(firstname, email, age, income, satisfaction, q1, q2)
+    fd = Formdata(age, home, gender, sex, education, faith, friends, family, view, openminded, support, manifest,
+                  partnership, kids, status)
     db.session.add(fd)
     db.session.commit()
 

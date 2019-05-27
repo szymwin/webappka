@@ -6,22 +6,40 @@ class Formdata(db.Model):
     __tablename__ = 'formdata'
     id = db.Column(db.Integer, primary_key=True)
     created_at = db.Column(db.DateTime, default=datetime.now)
-    firstname = db.Column(db.String, nullable=False)
-    email = db.Column(db.String)
     age = db.Column(db.Integer)
-    income = db.Column(db.Integer)
-    satisfaction = db.Column(db.Integer)
-    q1 = db.Column(db.Integer)
-    q2 = db.Column(db.Integer)
+    home = db.Column(db.String)
+    gender = db.Column(db.Integer)
+    sex = db.Column(db.Integer)
+    education = db.Column(db.Integer)
+    faith = db.Column(db.Integer)
+    friends = db.Column(db.Integer)
+    family = db.Column(db.Integer)
+    view = db.Column(db.Integer)
+    openminded = db.Column(db.Integer)
+    support = db.Column(db.Integer)
+    manifest = db.Column(db.Integer)
+    partnership = db.Column(db.Integer)
+    kids = db.Column(db.Integer)
+    status = db.Column(db.Integer)
 
-    def __init__(self, firstname, email, age, income, satisfaction, q1, q2):
-        self.firstname = firstname
-        self.email = email
+    def __init__(self, age, home, gender, sex, education, faith, friends, family, view, openminded, support, manifest,
+                 partnership, kids, status):
         self.age = age
-        self.income = income
-        self.satisfaction = satisfaction
-        self.q1 = q1
-        self.q2 = q2
+        self.home = home
+        self.gender = gender
+        self.sex = sex
+        self.education = education
+        self.faith = faith
+        self.friends = friends
+        self.family = family
+        self.view = view
+        self.openminded = openminded
+        self.support = support
+        self.manifest = manifest
+        self.partnership = partnership
+        self.kids = kids
+        self.status = status
+
 
     @staticmethod
     def generate_fake(count=100):
