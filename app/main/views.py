@@ -53,6 +53,8 @@ def show_result():
     # Prepare data for google charts
     data = [['Satisfaction', mean_satisfaction], ['Python skill', mean_q1], ['Flask skill', mean_q2]]
 
+
+    data2 = [['Satisfaction', mean_satisfaction], ['Python skill', mean_q1], ['Flask skill', mean_q2]]
     return render_template('main/result.html', data=data)
 
 
