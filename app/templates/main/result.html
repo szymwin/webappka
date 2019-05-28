@@ -6,197 +6,31 @@
 
 
 <div class="page-header">
-    <h1>Wyniki ankiety</h1><br><br><br>
-    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+    <h1>Wyniki ankiety</h1><br>
 </div>
+<br><br>
+<div id="columnchart_material" style="width: 800px; height: 500px;"></div>
 
-<div class="page-header">
-    <h1>Wybierz jakie dane chcesz porównać na wykresie</h1>
-</div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(drawChart);
 
-<form role="form" action="/result" method="post">
-    <h3>Wybierz jakie dane osobiste:</h3>
-    <div class="form-group">
-      <label for="option1">Proszę wybrać swój wiek</label>
-      <select class="form-control" id="option1" name="option1">
-        <option value=1>Wiek</option>
-        <option value=2>Miejsce zamieszkania</option>
-        <option value=3>Płeć</option>
-        <option value=4>Orientacja seksualna</option>
-        <option value=5>Wykształcenie</option>
-        <option value=6>Wiara</option>
-       </select>
-     </div>
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable({{ data|tojson}});
+      var options = {
+        chart: {
+          title: 'Wykres wybranych zależności',
+        }
+      };
 
-    <h3>Wybierz dane do porownania:</h3>
-    <div class="form-group">
-      <label for="option2">Proszę wybrać swój wiek</label>
-      <select class="form-control" id="option2" name="option2">
-        <option value=1>Czy posiadasz znajomych w środowisku LGBT</option>
-        <option value=2>Czy posiadasz w rodzinie osoby ze środowiska LGBT</option>
-        <option value=3>Czy orientacja ma wpływ na postrzeganie</option>
-        <option value=4>Czy jestes osoba tolerancyjna</option>
-        <option value=5>Czy wspierasz srodowisko LGBT</option>
-        <option value=6>Czy aktywnie wspierasz srodowisko LGBT</option>
-        <option value=7>Związki partnerskie</option>
-        <option value=8>adopcja dzieci</option>
-        <option value=9>Ocena środowiska w Polsce</option>
-       </select>
-     </div>
-    <button type="submit" class="btn btn-default">Pokaż wykres</button>
-</form>
+      var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
 
-<!--<script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
-<!--<script type="text/javascript">-->
-<!--  google.load('visualization', '1', {'packages':['corechart']});-->
-<!--  google.setOnLoadCallback(drawChart);-->
-<!--  function drawChart() {-->
-<!--    var data = new google.visualization.DataTable();-->
-<!--    data.addColumn('string', 'Odpowiedz');-->
-<!--    data.addColumn('number', 'Ilosc odpowiedzi');-->
-<!--    data.addRows( {{ data|tojson }} );-->
+      chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+</script>
+<p>
+    <a href="/chooseresult" class="btn btn-success" role="button">Wybierz inne dane do porównania</a>
+</p>
 
-<!--    var chart = new google.visualization.ColumnChart(-->
-<!--            document.getElementById('chart_div'));-->
-<!--    chart.draw(data, {title: 'Czy osoby wierzące popieraja LGBT', legend: 'none', vAxis: {baseline: 0} });-->
-<!--  }-->
-<!--</script>-->
-
- <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable({{ data|tojson}});
-        var options = {
-          chart: {
-            title: 'Zależność wsparcia od wiary',
-          }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-
-
-
-<!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
-<!--<script type="text/javascript">-->
-<!--    google.charts.load('current', {'packages':['bar']});-->
-<!--    google.charts.setOnLoadCallback(drawChart);-->
-<!--    function drawChart() {-->
-<!--        var data = new google.visualization.DataTable();-->
-<!--        data.addColumn('string', 'Czy wierzący');-->
-<!--        data.addColumn('number', 'popiera');-->
-<!--        data.addColumn('number', 'nie popiera');-->
-<!--        data.addColumn('number', 'trudno powiedziec');-->
-<!--        data.addRows( {{ data|tojson }} );-->
-
-<!--        var options = {-->
-<!--          chart: {-->
-<!--            title: 'zależność wiary od poparcia lgbt',-->
-<!--          }-->
-<!--        };-->
-
-<!--        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));-->
-
-<!--        chart.draw(data, google.charts.Bar.convertOptions(options));-->
-<!--     }-->
-<!--    </script>-->
-
-<!--<div id="columnchart_values" style="width: 900px; height: 300px;"></div>-->
-
-<!--    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
-<!--    <script type="text/javascript">-->
-<!--      google.charts.load("43", { packages: ["corechart"] });-->
-<!--      google.charts.setOnLoadCallback(drawChart);-->
-
-<!--      function drawChart() {-->
-<!--        var data = google.visualization.arrayToDataTable([-->
-<!--          ['Year', 'Sales', 'Expenses', 'Profit'],-->
-<!--          ['2014', 1000, 400, 200],-->
-<!--          ['2015', 1170, 460, 250],-->
-<!--          ['2016', 660, 1120, 300],-->
-<!--          ['2017', 1030, 540, 350]-->
-<!--        ]);-->
-
-<!--        var options = {-->
-<!--          chart: {-->
-<!--            title: 'Company Performance',-->
-<!--            subtitle: 'Sales, Expenses, and Profit: 2014-2017',-->
-<!--          }-->
-<!--        };-->
-
-<!--        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));-->
-
-<!--        chart.draw(data, google.charts.Bar.convertOptions(options));-->
-<!--      }-->
-<!--    </script>-->
-
-<!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
-<!--    <script type="text/javascript">-->
-
-<!--      // Load Charts and the corechart package.-->
-<!--      google.charts.load('current', {'packages':['corechart']});-->
-
-<!--      // Draw the pie chart for Sarah's pizza when Charts is loaded.-->
-<!--      google.charts.setOnLoadCallback(drawSarahChart);-->
-
-<!--      // Draw the pie chart for the Anthony's pizza when Charts is loaded.-->
-<!--      google.charts.setOnLoadCallback(drawAnthonyChart);-->
-
-<!--      // Callback that draws the pie chart for Sarah's pizza.-->
-<!--      function drawSarahChart() {-->
-
-<!--        // Create the data table for Sarah's pizza.-->
-<!--        var data = new google.visualization.DataTable();-->
-<!--        data.addColumn('string', 'Topping');-->
-<!--        data.addColumn('number', 'Slices');-->
-<!--        data.addRows([-->
-<!--          ['Mushrooms', 1],-->
-<!--          ['Onions', 1],-->
-<!--          ['Olives', 2],-->
-<!--          ['Zucchini', 2],-->
-<!--          ['Pepperoni', 1]-->
-<!--        ]);-->
-
-<!--        // Set options for Sarah's pie chart.-->
-<!--        var options = {title:'How Much Pizza Sarah Ate Last Night',-->
-<!--                       width:400,-->
-<!--                       height:300};-->
-
-<!--        // Instantiate and draw the chart for Sarah's pizza.-->
-<!--        var chart = new google.visualization.PieChart(document.getElementById('Sarah_chart_div'));-->
-<!--        chart.draw(data, options);-->
-<!--      }-->
-
-<!--      // Callback that draws the pie chart for Anthony's pizza.-->
-<!--      function drawAnthonyChart() {-->
-
-<!--        // Create the data table for Anthony's pizza.-->
-<!--        var data = new google.visualization.DataTable();-->
-<!--        data.addColumn('string', 'Topping');-->
-<!--        data.addColumn('number', 'Slices');-->
-<!--        data.addRows([-->
-<!--          ['Mushrooms', 2],-->
-<!--          ['Onions', 2],-->
-<!--          ['Olives', 2],-->
-<!--          ['Zucchini', 0],-->
-<!--          ['Pepperoni', 3]-->
-<!--        ]);-->
-
-<!--        // Set options for Anthony's pie chart.-->
-<!--        var options = {title:'How Much Pizza Anthony Ate Last Night',-->
-<!--                       width:400,-->
-<!--                       height:300};-->
-
-<!--        // Instantiate and draw the chart for Anthony's pizza.-->
-<!--        var chart = new google.visualization.PieChart(document.getElementById('Anthony_chart_div'));-->
-<!--        chart.draw(data, options);-->
-<!--      }-->
-<!--    </script>-->
 {% endblock %}
