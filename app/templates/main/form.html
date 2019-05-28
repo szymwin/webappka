@@ -12,12 +12,9 @@
     <div class="form-group">
       <label for="age">Proszę wybrać swój wiek</label>
       <select class="form-control" id="age" name="age">
-        <option value="1">Poniżej 18 lat</option>
-        <option value="2">18 - 24 lata</option>
-        <option value="3">25 - 29 lat</option>
-        <option value="4">30 - 39 lat</option>
-        <option value="5">40 - 49 lat</option>
-        <option value="6">Powyżej 50 lat</option>
+        <option value="1">Poniżej 30 lat</option>
+        <option value="2">30-49 lat</option>
+        <option value="3">powyżej 50lat</option>
        </select>
      </div>
 
@@ -25,10 +22,8 @@
       <label for="home">Proszę wybrać miejsce zamieszkania</label>
       <select class="form-control" id="home" name="home">
         <option value="1">Wieś</option>
-        <option value="2">Miasto do 50 tyś. mieszkańców</option>
-        <option value="3">Miasto od 50 tyś. do 200 tyś. mieszkańców</option>
-        <option value="4">Miasto od 200 tyś. do 500 tyś. mieszkańców</option>
-        <option value="5">Miasto powyżej 500 tyś. mieszkańców</option>
+        <option value="2">Małe miasto</option>
+        <option value="3">Duże miasto</option>
        </select>
      </div>
 
@@ -46,19 +41,16 @@
       <select class="form-control" id="sex" name="sex">
         <option value="1">Heteroseksualna</option>
         <option value="2">Homoseksualna</option>
-        <option value="3">Biseksualna</option>
-        <option value="4">Żadne z powyższych</option>
+        <option value="3">Inne</option>
        </select>
      </div>
 
     <div class="form-group">
       <label for="education">Proszę wybrać miejsce wykształcenie</label>
       <select class="form-control" id="education" name="education">
-        <option value="1">Brak</option>
-        <option value="2">Podstawowe</option>
-        <option value="3">Zawodowe</option>
-        <option value="4">Średnie</option>
-        <option value="5">Wyższe</option>
+        <option value="1">Podstawowe</option>
+        <option value="2">Średnie/Zawodowe</option>
+        <option value="3">Wyższe</option>
        </select>
      </div>
 
@@ -165,6 +157,9 @@
         <label class="radio-inline">
           <input type="radio" name="manifest" value="2">Nie
         </label>
+        <label class="radio-inline">
+          <input type="radio" name="manifest" value="3">Jestem przeciwko manifestacjom
+        </label>
     </div>
 
     <b>Czy popierasz wprowadzenie zwiazków partnerskich w Polsce?</b>
@@ -174,6 +169,9 @@
         </label>
         <label class="radio-inline">
           <input type="radio" name="partnership" value="2">Nie
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="partnership" value="3">Ciężko powiedzieć
         </label>
     </div>
 
@@ -185,12 +183,15 @@
         <label class="radio-inline">
           <input type="radio" name="kids" value="2">Nie
         </label>
+        <label class="radio-inline">
+          <input type="radio" name="kids" value="3">Nie jestem pewien/pewna
+        </label>
     </div>
 
 
     <div class="form-group">
-        <label for="status">Jak oceniasz sytuację środowiska LGBT w Polsce? ( w skali od 1 do 5) </label>
-        <input type="number" class="form-control" id="status" name="status" min="1" max="5" required>
+        <label for="status">Jak oceniasz sytuację środowiska LGBT w Polsce? ( w skali od 1 do 3) </label>
+        <input type="number" class="form-control" id="status" name="status" min="1" max="3" required>
     </div>
 
 

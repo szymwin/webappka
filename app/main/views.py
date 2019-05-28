@@ -100,8 +100,12 @@ def save():
 def choose():
     fd_list = db.session.query(Formdata).all()
 
-    option1 = int(request.form['option1'])
-    option2 = int(request.form['option2'])
+    if 'option1' and 'option2' in globals():
+        option1 = int(request.form['option1'])
+        option2 = int(request.form['option2'])
+    else:
+        option1 = 1
+        option2 = 1
 
     optname1 = "niewybrano"
     optname2= "niewybrano"
@@ -126,15 +130,15 @@ def choose():
         if option1 == 1:
             el.co1 = el.age
             optname1="Wiek"
-            name11 = "poniżej jakiegoś wieku"
-            name12 = "pomiędzy widełkami"
-            name13 = "powyzej wieku"
+            name11 = "poniżej 30lat"
+            name12 = "pomiędzy 30 a 49 lat"
+            name13 = "powyzej 50lat"
         elif option1 == 2:
             el.co1 = el.home
             optname1="Miejsce zamieszkania"
-            name11 = "wieś"
-            name12 = "małe miasto"
-            name13 = "duże miasto"
+            name11 = "Wieś"
+            name12 = "Małe miasto"
+            name13 = "Duże miasto"
         elif option1 == 3:
             el.co1 = el.gender
             optname1 = "Płeć"
@@ -146,13 +150,13 @@ def choose():
             optname1 = "Orientacja"
             name11 = "Heteroseksulana"
             name12 = "Homoseksualna"
-            name13 = "Biseksualna"
+            name13 = "Inne"
         elif option1 == 5:
             el.co1 = el.education
             optname1 = "Wykształcenie"
-            name11 = "podstawowe"
-            name12 = "średnie/zawodowe"
-            name13 = "wyższe"
+            name11 = "Podstawowe"
+            name12 = "Średnie/Zawodowe"
+            name13 = "Wyższe"
         elif option1 == 6:
             el.co1 = el.faith
             optname1 = "Wiara"
@@ -196,23 +200,23 @@ def choose():
             optname2 = "Aktywne wsparcie osób LGBT"
             name21 = "Aktywne wsparcie osób LGBT - Tak"
             name22 = "Aktywne wsparcie osób LGBT - Nie"
-            name23 = "Aktywne wsparcie osób LGBT - Raczej tak"
+            name23 = "Aktywne wsparcie osób LGBT - Jestem przeciwko manifestacjom"
         elif option2 == 7:
             el.co2 = el.partnership
             optname2 = "Poparcie dla związków partnerskich"
             name21 = "Poparcie dla związków partnerskich - Tak"
             name22 = "Poparcie dla związków partnerskich - Nie"
-            name23 = "Poparcie dla związków partnerskich - Raczej tak"
+            name23 = "Poparcie dla związków partnerskich - Ciężko powiedzieć"
         elif option2 == 8:
             el.co2 = el.kids
             optname2 = "Poparcie dla adopcji przez pary jednopłciowe"
             name21 = "Poparcie dla adopcji przez pary jednopłciowe - Tak"
             name22 = "Poparcie dla adopcji przez pary jednopłciowe - Nie"
-            name23 = "Poparcie dla adopcji przez pary jednopłciowe - Nie wiem"
+            name23 = "Poparcie dla adopcji przez pary jednopłciowe - Nie jestem pewien/pewna"
         elif option2 == 9:
             el.co2 = el.status
             optname2 = "Ocena sytuacji środowiska LGBT w polsce"
-            name21 = "Ocena sytuacji środowiska LGBT w polsce - Żle"
+            name21 = "Ocena sytuacji środowiska LGBT w polsce - Źle"
             name22 = "Ocena sytuacji środowiska LGBT w polsce - Neutralnie"
             name23 = "Ocena sytuacji środowiska LGBT w polsce - Dobrze"
 
