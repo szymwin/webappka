@@ -60,7 +60,8 @@ def show_result():
             elif el.support == 3:
                 ttp += 1
 
-    data = [['Tak', wt], ['Nie', wn], ['Trudno powiedziec', wtp]]
+    data = [['czy osoba wierzaca', 'wspiera', 'nie wspiera', 'trudno powiedziec'], ['tak', wt, wn, wtp],
+            ['Nie', nt, nn, ntp], ['trudno powiedziec', tt, tn, ttp]]
 
     return render_template('main/result.html', data=data)
 
@@ -92,3 +93,100 @@ def save():
 
     return redirect('/')
 
+@main.route("/choose", methods=['POST'])
+def choose():
+    fd_list = db.session.query(Formdata).all()
+
+    option1 = request.form['option1']
+    option2 = request.form['option2']
+
+    optname1 = "niewybrano"
+    optname2= "niewybrano"
+    var11 = 0
+    var12 = 0
+    var13 = 0
+    var21 = 0
+    var22 = 0
+    var23 = 0
+    var31 = 0
+    var32 = 0
+    var33 = 0
+
+    for el in fd_list:
+        if option1 == 1:
+            el.co1 = el.age
+            optname1="Wiek"
+        elif option1 == 2:
+            el.co1 = el.home
+            optname1="Miejsce zamieszkania"
+        elif option1 == 3:
+            el.co1 = el.gender
+            optname1 = "Płeć"
+        elif option1 == 4:
+            el.co1 = el.sex
+            optname1 = "Orientacja"
+        elif option1 == 5:
+            el.co1 = el.education
+            optname1 = "Wykształcenie"
+        elif option1 == 6:
+            el.co1 = el.faith
+            optname1 = "Wiara"
+
+    for el in fd_list:
+        if option2 == 1:
+            el.co2 = el.friends
+            optname2 = "Wiek"
+        elif option2 == 2:
+            el.co2 = el.home
+            optname2 = "Miejsce zamieszkania"
+        elif option2 == 3:
+            el.co2 = el.gender
+            optname2 = "Płeć"
+        elif option2 == 4:
+            el.co2 = el.sex
+            optname2 = "Orientacja"
+        elif option2 == 5:
+            el.co2 = el.education
+            optname2 = "Wykształcenie"
+        elif option2 == 6:
+            el.co2 = el.faith
+            optname2 = "Wiara"
+        elif option2 == 7:
+            el.co2 = el.sex
+            optname2 = "Orientacja"
+        elif option2 == 8:
+            el.co2 = el.education
+            optname2 = "Wykształcenie"
+        elif option2 == 9:
+            el.co2 = el.faith
+            optname2 = "Wiara"
+
+
+
+    for el in fd_list:
+        if el.co1 == 1:
+            if el.co2 == 1:
+                var11 += 1
+            elif el.co2 == 2:
+                var12 +=1
+            elif el.co2 == 3:
+                var13 += 1
+        if el.co1 == 2:
+            if el.co2 == 1:
+                var21 += 1
+            elif el.co2 == 2:
+                var22 += 1
+            elif el.co2 == 3:
+                var23 += 1
+        if el.co1 == 3:
+            if el.co2 == 1:
+                var31 += 1
+            elif el.co2 == 2:
+                var32 += 1
+            elif el.co2 == 3:
+                var33 += 1
+
+    data = [[optname1, 'wspiera', 'nie wspiera', 'trudno powiedziec'], ['tak', var11, var12, var13],
+            ['Nie', var21, var22, var23], ['trudno powiedziec', var31, var32, var33]]
+
+    return redirect('/result'), render_template('main/result.html', data=data)

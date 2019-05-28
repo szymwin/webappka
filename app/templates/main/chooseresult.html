@@ -1,0 +1,43 @@
+<!-- extend base layout -->
+{% extends "main/base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Wybierz jakie dane chcesz porównać na wykresie</h1>
+</div>
+
+<form role="form" action="/choose" method="post">
+    <h3>Wybierz jakie dane osobiste:</h3>
+    <div class="form-group">
+      <label for="option1">Proszę wybrać swój wiek</label>
+      <select class="form-control" id="option1" name="option1">
+        <option value="1">Wiek</option>
+        <option value="2">MIejsce zamieszkania</option>
+        <option value="3">Płeć</option>
+        <option value="4">Orientacja seksualna</option>
+        <option value="5">Wykształcenie</option>
+        <option value="6">Wiara</option>
+       </select>
+     </div>
+
+    <h3>Wybierz dane do porownania:</h3>
+    <div class="form-group">
+      <label for="option2">Proszę wybrać swój wiek</label>
+      <select class="form-control" id="option2" name="option2">
+        <option value="1">Czy posiadasz znajomych w środowisku LGBT</option>
+        <option value="2">Czy posiadasz w rodzinie osoby ze środowiska LGBT</option>
+        <option value="3">Czy orientacja ma wpływ na postrzeganie</option>
+        <option value="4">Czy jestes osoba tolerancyjna</option>
+        <option value="5">Czy wspierasz srodowisko LGBT</option>
+        <option value="6">Czy aktywnie wspierasz srodowisko LGBT</option>
+        <option value="7">Związki partnerskie</option>
+        <option value="8">adopcja dzieci</option>
+        <option value="9">Ocena środowiska w Polsce</option>
+       </select>
+     </div>
+    <button type="submit" class="btn btn-default">Pokaż wykres</button>
+</form>
+
+{% endblock %}
+
