@@ -100,8 +100,8 @@ def save():
 def choose():
     fd_list = db.session.query(Formdata).all()
 
-    option1 = request.form['option1']
-    option2 = request.form['option2']
+    option1 = int(request.form['option1'])
+    option2 = int(request.form['option2'])
 
     optname1 = "niewybrano"
     optname2= "niewybrano"
@@ -114,7 +114,6 @@ def choose():
     var31 = 0
     var32 = 0
     var33 = 0
-
 
     for el in fd_list:
         if option1 == 1:
