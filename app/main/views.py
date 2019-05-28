@@ -37,21 +37,22 @@ def show_result():
     ttp = 0
 
     for el in fd_list:
-        if el.faith == 1:
+        el.co = el.faith
+        if el.co == 1:
             if el.support == 1:
                 wt += 1
             elif el.support == 2:
                 wn +=1
             elif el.support == 3:
                 wtp += 1
-        if el.faith == 2:
+        if el.co == 2:
             if el.support == 1:
                 nt += 1
             elif el.support == 2:
                 nn += 1
             elif el.support == 3:
                 ntp += 1
-        if el.faith == 3:
+        if el.co == 3:
             if el.support == 1:
                 tt += 1
             elif el.support == 2:
