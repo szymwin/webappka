@@ -99,16 +99,12 @@ def save():
     return redirect('/')
 
 
-@main.route("/result", methods=["POST"])
+@main.route("/result", methods=['POST'])
 def choose():
     fd_list = db.session.query(Formdata).all()
 
-    if 'option1' and 'option2' in globals():
-        option1 = int(request.POST['option1'])
-        option2 = int(request.POST['option2'])
-    else:
-        option1 = 1
-        option2 = 1
+    option1 = int(request.form['option1'])
+    option2 = int(request.form['option2'])
 
     optname1 = "niewybrano"
     var11 = 0
