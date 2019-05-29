@@ -102,7 +102,6 @@ def save():
 @main.route("/result", methods=['POST'])
 def choose():
     fd_list = db.session.query(Formdata).all()
-
     option1 = int(request.form['option1'])
     option2 = int(request.form['option2'])
 
