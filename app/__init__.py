@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 
-db = SQLAlchemy()
+# db = SQLAlchemy()
 
 
 def create_app(config_name):
@@ -14,7 +14,8 @@ def create_app(config_name):
 
     # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///formdata.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'False'
-    db.init_app(app)
+    db = SQLAlchemy(app)
+    # db.init_app(app)
     # db = SQLAlchemy(app)
 
     # with app.test_request_context():
