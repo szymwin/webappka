@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+import os
 
 
 db = SQLAlchemy()
@@ -8,7 +9,10 @@ db = SQLAlchemy()
 def create_app(config_name):
     app = Flask(__name__)
     # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///formdata.db'
+
+    app.config.from_object(os.environ['APP_SETTINGS'])
+
+    # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///formdata.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = 'False'
     db.init_app(app)
     # db = SQLAlchemy(app)
