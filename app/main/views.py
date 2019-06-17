@@ -20,6 +20,10 @@ def show_form():
 def show_chooseresult():
     return render_template('main/chooseresult.html')
 
+@main.route("/info")
+def show_info():
+    return render_template('main/info.html')
+
 
 @main.route("/raw")
 def show_raw():
