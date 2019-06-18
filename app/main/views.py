@@ -94,6 +94,7 @@ def choose():
             name12 = "pomiędzy 30 a 49 lat"
             name13 = "powyzej 50lat"
         elif option1 == 2:
+            el.home = int(el.home)
             el.co1 = el.home
             optname1 = "Miejsce zamieszkania"
             name11 = "Wieś"
@@ -193,6 +194,8 @@ def choose():
                 var32 += 1
             elif el.co2 == 3:
                 var33 += 1
+
+
     count = var11 + var12 + var13 + var21 + var22 + var23 + var31 + var32 + var33
 
     data = [[optname1, name21, name22, name23], [name11, var11, var12, var13],
