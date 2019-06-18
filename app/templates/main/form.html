@@ -7,12 +7,13 @@
   <h1>Proszę wypełnić formularz</h1>
 </div>
 
-<form role="form" action="/save" method="post">
+<form role="form" onsubmit="return Validate()" action="/save" method="post">
     <h3>Dane osobiste</h3>
     <div class="form-group">
       <label for="age">Proszę wybrać swój wiek</label>
       <select class="form-control" id="age" name="age">
-        <option value="1">Poniżej 30 lat</option>
+        <option value="0" disabled="disabled" selected hidden>Wybierz...</option>
+        <option value="1" >Poniżej 30 lat</option>
         <option value="2">30-49 lat</option>
         <option value="3">powyżej 50lat</option>
        </select>
@@ -21,6 +22,7 @@
     <div class="form-group">
       <label for="home">Proszę wybrać miejsce zamieszkania</label>
       <select class="form-control" id="home" name="home">
+        <option value="0" disabled="disabled" selected hidden>Wybierz...</option>
         <option value="1">Wieś</option>
         <option value="2">Małe miasto</option>
         <option value="3">Duże miasto</option>
@@ -30,6 +32,7 @@
     <div class="form-group">
       <label for="gender">Proszę wybrać płeć</label>
       <select class="form-control" id="gender" name="gender">
+        <option value="0" disabled="disabled" selected hidden>Wybierz...</option>
         <option value="1">Mężczyzna</option>
         <option value="2">Kobieta</option>
         <option value="3">Inne</option>
@@ -39,6 +42,7 @@
     <div class="form-group">
       <label for="sex">Proszę wybrać orientację seksualną</label>
       <select class="form-control" id="sex" name="sex">
+        <option value="0" disabled="disabled" selected hidden>Wybierz...</option>
         <option value="1">Heteroseksualna</option>
         <option value="2">Homoseksualna</option>
         <option value="3">Inne</option>
@@ -48,6 +52,7 @@
     <div class="form-group">
       <label for="education">Proszę wybrać wykształcenie</label>
       <select class="form-control" id="education" name="education">
+        <option value="0" disabled="disabled" selected hidden>Wybierz...</option>
         <option value="1">Podstawowe</option>
         <option value="2">Średnie/Zawodowe</option>
         <option value="3">Wyższe</option>
@@ -57,11 +62,13 @@
     <div class="form-group">
       <label for="faith">Czy jesteś osobą wierzącą?</label>
       <select class="form-control" id="faith" name="faith">
+        <option value="0" disabled="disabled" selected hidden>Wybierz...</option>
         <option value="1">Tak</option>
         <option value="2">Nie</option>
         <option value="3">Trudno powiedzieć</option>
        </select>
      </div>
+
 
     <h3>Dane dotyczące środowiska LGBT wokół</h3>
     <b>Czy masz wśród znajomych osoby należące do środowiska LGBT?</b>
@@ -179,8 +186,27 @@
     </div>
 
 
-    <button type="submit" class="btn btn-default">Prześlij wypełniony formularz</button>
+    <button type="submit" class="btn btn-default" >Prześlij wypełniony formularz</button>
 </form>
+
+     <script type="text/javascript">
+            function Validate()
+            {
+                var s1 = document.getElementById("age").value;
+                var s2 = document.getElementById("home").value;
+                var s3 = document.getElementById("gender").value;
+                var s4= document.getElementById("sex").value;
+                var s5 = document.getElementById("education").value;
+                var s6 = document.getElementById("faith").value;
+                if(s1 == "0" || s2 == "0" || s3 == "0" || s4 == "0" ||s5 == "0" || s6 == "0")
+                {
+                    alert("Proszę uzupełnić wszystkie pola formularza, w sekcji danych osobowych");
+                    return false;
+                }
+                return true;
+            }
+     </script>
+
 
 {% endblock %}
 

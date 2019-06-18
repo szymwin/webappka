@@ -29,6 +29,8 @@ def show_info():
     return render_template('main/info.html')
 
 
+
+
 @main.route("/raw")
 def show_raw():
     fd = db.session.query(Formdata).all()
@@ -52,10 +54,9 @@ def save():
     partnership = request.form['partnership']
     kids = request.form['kids']
     status = request.form['status']
-
     # Save the data
     fd = Formdata(age, home, gender, sex, education, faith, friends, family, view, openminded, support, manifest,
-                  partnership, kids, status)
+                   partnership, kids, status)
     db.session.add(fd)
     db.session.commit()
 
