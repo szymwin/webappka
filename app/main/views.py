@@ -10,6 +10,10 @@ main = Blueprint('main', __name__)
 def welcome():
     return render_template('main/welcome.html')
 
+@main.route("/podziekowania")
+def podziekowania():
+    return render_template('main/podziekowania.html')
+
 # TODO: utworzenie dodatkowych modulow / pakietow
 @main.route("/form")
 def show_form():
@@ -29,51 +33,6 @@ def show_info():
 def show_raw():
     fd = db.session.query(Formdata).all()
     return render_template('main/raw.html', formdata=fd)
-
-
-# @main.route("/result")
-# def show_result():
-#     fd_list = db.session.query(Formdata).all()
-#
-#     wt = 0
-#     wn = 0
-#     wtp = 0
-#     nt = 0
-#     nn = 0
-#     ntp = 0
-#     tt = 0
-#     tn = 0
-#     ttp = 0
-#
-#     for el in fd_list:
-#         el.co = el.faith
-#         if el.co == 1:
-#             if el.support == 1:
-#                 wt += 1
-#             elif el.support == 2:
-#                 wn +=1
-#             elif el.support == 3:
-#                 wtp += 1
-#         if el.co == 2:
-#             if el.support == 1:
-#                 nt += 1
-#             elif el.support == 2:
-#                 nn += 1
-#             elif el.support == 3:
-#                 ntp += 1
-#         if el.co == 3:
-#             if el.support == 1:
-#                 tt += 1
-#             elif el.support == 2:
-#                 tn += 1
-#             elif el.support == 3:
-#                 ttp += 1
-#
-#     data = [['czy osoba wierzaca', 'wspiera', 'nie wspiera', 'trudno powiedziec'], ['tak', wt, wn, wtp],
-#             ['Nie', nt, nn, ntp], ['trudno powiedziec', tt, tn, ttp]]
-#
-#     return render_template('main/result.html', data=data)
-
 
 @main.route("/save", methods=['POST'])
 def save():
@@ -100,7 +59,7 @@ def save():
     db.session.add(fd)
     db.session.commit()
 
-    return redirect('/')
+    return redirect('/podziekowania')
 
 
 @main.route("/result", methods=['POST'])
