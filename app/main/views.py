@@ -200,5 +200,11 @@ def choose():
 
     data = [[optname1, name21, name22, name23], [name11, var11, var12, var13],
             [name12, var21, var22, var23], [name13, var31, var32, var33]]
-
-    return render_template('main/result.html', data=data, count=count)
+    data2 = [['ktoś ze srodowiska lgbt', 'ilość odpowiedzi'], [ name21, var11], [ name22, var12],
+            [name23, var13]]
+    data3 = [['ktoś ze srodowiska lgbt', 'ilośc odpowiedzi'], [name21, var21], [name22, var22],
+             [name23, var23]]
+    data4 = [['ktoś ze srodowiska lgbt', 'ilość odpowiedzi'], [name21, var31], [name22, var32],
+             [name23, var33]]
+    return render_template('main/result.html', data=data, count=count, data2=data2, data3=data3, data4=data4,
+                           wykres1=name11, wykres2=name12, wykres3=name13, nazwa=optname1)
