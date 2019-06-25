@@ -41,27 +41,27 @@ class Formdata(db.Model):
         self.status = status
 
 
-    @staticmethod
-    def generate_fake(count=100):
-        """Generate a number of fake users for testing."""
-        from sqlalchemy.exc import IntegrityError
-        from random import seed, choice
-        from faker import Faker
-
-        fake = Faker()
-        seed()
-
-        for i in range(count):
-            f = Formdata(
-                firstname=fake.first_name(),
-                email=fake.email(),
-                age=(fake.pyint() % 99)+1,
-                income=fake.pyint(),
-                satisfaction=fake.pyint()%6,
-                q1=fake.pyint()%6,
-                q2=fake.pyint()%6)
-            db.session.add(f)
-            try:
-                db.session.commit()
-            except IntegrityError:
-                db.session.rollback()
+    # @staticmethod
+    # def generate_fake(count=100):
+    #     """Generate a number of fake users for testing."""
+    #     from sqlalchemy.exc import IntegrityError
+    #     from random import seed, choice
+    #     from faker import Faker
+    #
+    #     fake = Faker()
+    #     seed()
+    #
+    #     for i in range(count):
+    #         f = Formdata(
+    #             firstname=fake.first_name(),
+    #             email=fake.email(),
+    #             age=(fake.pyint() % 99)+1,
+    #             income=fake.pyint(),
+    #             satisfaction=fake.pyint()%6,
+    #             q1=fake.pyint()%6,
+    #             q2=fake.pyint()%6)
+    #         db.session.add(f)
+    #         try:
+    #             db.session.commit()
+    #         except IntegrityError:
+    #             db.session.rollback()
