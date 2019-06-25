@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19af1270-6f96-4ac8-925b-94688b7dfbbc" name="Default Changelist" comment="przepiecie bazy">
-      <change afterPath="$PROJECT_DIR$/appwebowe_prezentacja.pdf" afterDir="false" />
+    <list default="true" id="19af1270-6f96-4ac8-925b-94688b7dfbbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/formdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/formdata.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/main/result.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="215">
@@ -60,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -107,9 +105,9 @@
         <option value="$PROJECT_DIR$/app/templates/main/form.html" />
         <option value="$PROJECT_DIR$/app/templates/main/base.html" />
         <option value="$PROJECT_DIR$/app/templates/main/result.html" />
-        <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/models/formdata.py" />
         <option value="$PROJECT_DIR$/app/main/views.py" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
       </list>
     </option>
   </component>
@@ -434,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561062510540</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="dodanie prezentacji">
+      <created>1561466940284</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1561466940325</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TodoView">
@@ -448,6 +453,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.19568452" />
       <window_info id="Structure" order="1" sideWeight="0.5010267" side_tool="true" weight="0.15773809" />
@@ -521,7 +527,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="zmiany tekstu (tłumaczenia)" />
     <MESSAGE value="pierwsze proby z wykresami" />
     <MESSAGE value="ddoanie zmiennych przy tworzneiu wykresów" />
     <MESSAGE value="całkowita zmiana wykresów, opcja wybrania co na wykresie" />
@@ -546,7 +551,8 @@
     <MESSAGE value="mm" />
     <MESSAGE value="przepiecie bazy" />
     <MESSAGE value="dodanie wykresów kołowych" />
-    <option name="LAST_COMMIT_MESSAGE" value="dodanie wykresów kołowych" />
+    <MESSAGE value="dodanie prezentacji" />
+    <option name="LAST_COMMIT_MESSAGE" value="dodanie prezentacji" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -735,6 +741,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/main/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="41" column="8" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -742,13 +755,6 @@
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/main/result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="41" column="8" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
         </state>
       </provider>
     </entry>
