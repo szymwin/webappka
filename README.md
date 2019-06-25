@@ -9,3 +9,5 @@ Projekt wykonany przez:<br>
 <li> Patrycja Janowska </li>
 <li> Szymon Salagierski </li>
 </ul>
+<br>
+W repozytorium znajduje sie plik z prezentacją w pdf
